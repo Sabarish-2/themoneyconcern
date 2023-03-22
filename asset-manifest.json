@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/themoneyconcern/static/css/main.89ec7b90.css",
-    "main.js": "/themoneyconcern/static/js/main.cf568485.js",
+    "main.js": "/themoneyconcern/static/js/main.176812d6.js",
     "static/js/787.cda612ba.chunk.js": "/themoneyconcern/static/js/787.cda612ba.chunk.js",
     "index.html": "/themoneyconcern/index.html",
     "main.89ec7b90.css.map": "/themoneyconcern/static/css/main.89ec7b90.css.map",
-    "main.cf568485.js.map": "/themoneyconcern/static/js/main.cf568485.js.map",
+    "main.176812d6.js.map": "/themoneyconcern/static/js/main.176812d6.js.map",
     "787.cda612ba.chunk.js.map": "/themoneyconcern/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89ec7b90.css",
-    "static/js/main.cf568485.js"
+    "static/js/main.176812d6.js"
   ]
 }
