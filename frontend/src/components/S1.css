@@ -30,6 +30,7 @@ textarea {
   #calTax .form-group {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -95,10 +96,13 @@ textarea {
     color: #0080ff;
     margin-top: 0.5rem;
   }
-  
 
 
-
+/* calulate button to be centered */
+#CalBtnGrp{
+    display: flex;
+    justify-content: space-around;
+}
 
 
 /* .container {

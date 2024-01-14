@@ -3,6 +3,18 @@ import createHttpError from "http-errors";
 import mongoose from "mongoose";
 import TaxModel from "../models/tax";
 
+// Short explanation for the code below:
+// First we import the RequestHandler type from the express library.
+// Then we import the createHttpError function from the http-errors library.
+// Then we import the mongoose library.
+// Then we import the Tax model from the tax.ts file.
+// Then we export the controller functions.
+// The controller functions will handle the business logic for each request.
+// The controller functions will send the response to the client.
+// The controller functions will also handle any errors that might occur.
+// The controller functions will send the error response to the client.
+
+
 export const getTaxes: RequestHandler = async (req, res, next) => {
     try {
         const tax = await TaxModel.find().exec();

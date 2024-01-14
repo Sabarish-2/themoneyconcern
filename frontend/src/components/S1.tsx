@@ -2,6 +2,23 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import './S1.css'
 
+// Short explanation for the code below:
+// We are using the useState hook to create a state variable called selected.
+// The useState hook returns an array with two elements.
+// The first element is the state variable and the second element is a function to update the state variable.
+// We are using array destructuring to assign names to the elements of the array.
+// We are passing the initial value of the state variable to the useState hook.
+// We are using the setSelected function to update the selected state variable.
+// We are using the selected state variable to set the value of the select element.
+// We are using the handleChange function as the onChange event handler for the select element.
+// The handleChange function uses the setSelected function to update the selected state variable.
+// The handleChange function is called whenever the value of the select element changes.
+// The handleChange function is passed the event object as an argument.
+// The event object contains the value of the select element.
+// The value of the select element is used to update the selected state variable.
+// The selected state variable is used to set the value of the select element.
+
+
 const S1 = () => {
 
   function setCookie(name: string, value: number, expirationDays: number): void {
@@ -259,7 +276,7 @@ const S1 = () => {
               defaultValue={SPLA}
             />
           </Form.Group>
-          <Form.Group className="m-3">
+          <Form.Group className="m-3" id='CalBtnGrp'>
             <Button
               onClick={buttonHandler}
               className='m-5'
@@ -277,6 +294,9 @@ const S1 = () => {
                 Gross Total Income :
               </h4>
               <p id="Ans"><> {TaxCal} </></p>
+              <h4>
+                Soon, you can calculate Tax Deductions!!!
+              </h4>
 
             </div>
           </Form.Group>
