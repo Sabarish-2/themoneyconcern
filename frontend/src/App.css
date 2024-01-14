@@ -1,0 +1,21 @@
+.App {
+  margin: 50px;
+  text-align: center;
+}
+
+body{
+  background-color: black;
+    text-decoration-color: antiquewhite;
+    color: aliceblue;
+}
+/* 
+div {
+  background-color: black;
+    text-decoration-color: antiquewhite;
+    color: aliceblue;
+} */
+
+h5{
+  background-color: #61dafb;
+  color: red;
+}
