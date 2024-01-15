@@ -13,6 +13,18 @@ textarea {
   overflow: hidden;
 }
 
+/* Soon */
+#taxDeduc{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 2rem auto;
+  padding: 1.5rem 5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+  max-width: 1000px;
+}
 
 /* Form styles */
 #calTax {
@@ -30,7 +42,6 @@ textarea {
   /* Form group styles */
   #calTax .form-group {
     display: flex;
-    /* align-items: stretch; */
     flex-direction: column;
     align-items: stretch;
     width: 100%;
@@ -108,9 +119,36 @@ textarea {
   width: 100%;
 }
 
+/* Soon id has attractive eye-catching text styles*/
+#Soon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: -webkit-linear-gradient(right, rgb(255, 242, 0), rgb(144, 0, 255));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+
+
+/* Button inside nav will be completely styleless */
+nav button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 /* .container {

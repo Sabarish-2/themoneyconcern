@@ -152,7 +152,8 @@ const S1 = () => {
     <>
 
       <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a className="navbar-brand" href="#">My App</a>
+        {/* <a className="navbar-brand" href="#">My App</a> */}
+        <button className="navbar-brand" onClick={handleClick}>My App</button>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -199,8 +200,13 @@ const S1 = () => {
 </nav> */}
 
 
-
       <div className="container">
+        <Form id="taxDeduc" className="m-3">
+      <h4 id='Soon'>
+        Soon, you can calculate Tax Deductions!!!
+      </h4>
+      </Form>
+      {/* <br /> */}
         <Form id="calTax" className="m-3">
           <Form.Group>
             <Form.Label className="m-3">Basic Salary</Form.Label>
@@ -305,10 +311,6 @@ const S1 = () => {
                 Gross Total Income :
               </h4>
               <p id="Ans"><> {TaxCal} </></p>
-              <h4>
-                Soon, you can calculate Tax Deductions!!!
-              </h4>
-
             </div>
           </Form.Group>
         </Form>
