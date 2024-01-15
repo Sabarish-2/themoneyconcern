@@ -17,7 +17,7 @@ textarea {
 #calTax {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 1rem;
@@ -29,6 +29,7 @@ textarea {
   /* Form group styles */
   #calTax .form-group {
     display: flex;
+    /* align-items: stretch; */
     flex-direction: column;
     width: 100%;
     margin-bottom: 1rem;
@@ -96,10 +97,19 @@ textarea {
     margin-top: 0.5rem;
   }
   
+/* Calculate Button Group Centered */
 
+#CalBtnGrp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
 
-
-
+.container {
+  display: flex;
+  justify-content: center;
+}
 
 /* .container {
     max-width: 800px;

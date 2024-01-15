@@ -4,6 +4,10 @@ import './S1.css'
 
 const S1 = () => {
 
+  function handleClick() {
+    // Your action here
+  }
+
   function setCookie(name: string, value: number, expirationDays: number): void {
     const date = new Date();
     date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
@@ -84,9 +88,9 @@ const S1 = () => {
       setCookie("Rent", Rent, 30);
       setCookie("BillSub", BillSub, 30);
       setCookie("StdDeduct", StdDeduct, 30);
-      
+
       MetroPercent = getCookie("MetroPercent") || 0.5;
-      
+
       setCookie("MetroPercent", MetroPercent, 30);
 
       const BSy = BS * 12, HRAy = HRA * 12, SPLAy = SPLA * 12, Renty = Rent * 12;
@@ -138,13 +142,20 @@ const S1 = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home</a>
+              <button className="nav-link" onClick={handleClick}>Home</button>
+              {/* <a className="nav-link" href="#">Home</a> */}
+              {/* // Before
+<a onClick={handleClick}>Click me</a>
+
+// After */}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
+              <button className="nav-link" onClick={handleClick}>About</button>
+              {/* <a className="nav-link" href="#"></a> */}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <button className="nav-link" onClick={handleClick}>Contact</button>
+              {/* <a className="nav-link" href="#"></a> */}
             </li>
           </ul>
         </div>
@@ -259,7 +270,7 @@ const S1 = () => {
               defaultValue={SPLA}
             />
           </Form.Group>
-          <Form.Group className="m-3">
+          <Form.Group className="m-3" id='CalBtnGrp'>
             <Button
               onClick={buttonHandler}
               className='m-5'
