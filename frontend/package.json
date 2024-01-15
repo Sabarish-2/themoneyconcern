@@ -52,7 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/cookie-parser": "^1.4.3",
+    "@types/cookie-parser": "^1.4.6",
     "gh-pages": "^5.0.0"
   }
 }
