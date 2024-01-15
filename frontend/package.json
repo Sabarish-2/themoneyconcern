@@ -11,7 +11,7 @@
     "@types/jest": "^29.5.11",
     "@types/node": "^16.18.13",
     "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.0.11",
+    "@types/react-dom": "^18.2.18",
     "bootstrap": "^5.2.3",
     "cookie-parser": "^1.4.6",
     "crypto-browserify": "^3.12.0",
