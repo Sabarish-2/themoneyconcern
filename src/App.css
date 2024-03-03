@@ -1,0 +1,18 @@
+/* Short explanation for the code below: */
+/* The code below is used to style the frontend of the application. */
+
+.App {
+  padding: 8px;
+  text-align: center;
+}
+
+/* body{
+  background-color: black;
+    text-decoration-color: antiquewhite;
+    color: aliceblue;
+} */
+
+h5{
+  background-color: #61dafb;
+  color: red;
+}
