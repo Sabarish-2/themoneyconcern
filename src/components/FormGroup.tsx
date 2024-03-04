@@ -33,7 +33,7 @@ const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : Form
                             checked={!isSecond}
                             onChange={(e) => {
                                 setIsSecond(false)
-                                onChange(parseFloat(e.target.value), isSecond)
+                                onChange(parseFloat(e.target.value) || defaultValue, isSecond)
                             }}
                             />
                         {rlabel1}
@@ -48,7 +48,7 @@ const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : Form
                             checked={isSecond}
                             onChange={(e) => {
                                 setIsSecond(true)
-                                onChange(parseFloat(e.target.value), isSecond)
+                                onChange(parseFloat(e.target.value) || defaultValue, isSecond)
                         }}
                         />
                         {rlabel2}

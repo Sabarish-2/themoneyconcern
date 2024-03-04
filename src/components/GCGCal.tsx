@@ -111,15 +111,16 @@ const GCGCal = () => {
             if (GoldOld) GrossCGTax += (GoldCG * 0.2);
             else GrossCGTax += (GoldCG * 0.3);
 
-            if (GrossCGTax === 0) {
-                GrossCGTax = null;
-                alert("All Fields are Required!")
-            }
-            else {
+            // if (GrossCGTax === 0) {
+            //     GrossCGTax = null;
+            //     alert("All Fields are Required!")
+            // }
+            // else {
                 setCookie("GrossCGTax", GrossCGTax, 30);
                 document.getElementById("Ans").innerHTML = (GrossCGTax).toString();
-            }
+            // }
         } else {
+            alert("Stock: " + StockPurchase + " " + StockSale + " " + StockOld + " " + MFPurchase + " " + MFSale + " " + MFOld + " " + PropertyPurchase + " " + PropertySale + " " + PropertyOld + " " + GoldPurchase + " " + GoldSale + " " + GoldOld + " " + GrossCGTax)
             alert("All Fields are Required!")
         }
     };
