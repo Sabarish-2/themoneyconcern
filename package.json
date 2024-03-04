@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://gitname.github.io/themoneyconcern",
+  "homepage": "https://gitname.github.io/",
   "private": true,
   "proxy": "http://localhost:2000/",
   "dependencies": {
