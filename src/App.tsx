@@ -14,11 +14,11 @@ function App() {
       <NavBar />
       <br />
       <Routes>
-        <Route path="/themoneyconcern/gtical" element={<GTICalPage />} />
-        <Route path="/themoneyconcern/gcgcal" element={<GCGCalPage />} />
-        <Route path="/themoneyconcern/gipcal" element={<GIPCalPage />} />
-        <Route path="/themoneyconcern" element={<HomePage />} />
-        <Route path="/themoneyconcern/*" element={<HomePage />} />
+        <Route path="/gtical" element={<GTICalPage />} />
+        <Route path="/gcgcal" element={<GCGCalPage />} />
+        <Route path="/gipcal" element={<GIPCalPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/*" element={<HomePage />} />
       </Routes>
     </div >
     </HashRouter>
