@@ -19,7 +19,7 @@ const GCGCal = () => {
             const cookie = cookies[i];
             const [cookieName, cookieValue] = cookie.split('=');
             if (cookieName === name) {
-                if (typeof cookieValue === 'boolean') return cookieValue
+                if (cookieValue === 'true') return Boolean(cookieValue)
                 else {
                     return parseFloat(cookieValue);
                 }
@@ -27,19 +27,6 @@ const GCGCal = () => {
         }
         return null;
     }
-
-    // const Metro = [
-    //     {
-    //         key: 1,
-    //         label: "Yes",
-    //         value: 0.5,
-    //     },
-    //     {
-    //         key: 0,
-    //         label: "No",
-    //         value: 0.4,
-    //     },
-    // ];
 
     const [StockPurchase, setStockPurchase] = useState<number>(getCookie("StockPurchase"));
     const [StockSale, setStockSale] = useState<number>(getCookie("StockSale"));
@@ -53,34 +40,22 @@ const GCGCal = () => {
     const [GoldPurchase, setGoldPurchase] = useState<number>(getCookie("GoldPurchase"));
     const [GoldSale, setGoldSale] = useState<number>(getCookie("GoldSale"));
     const [GoldOld, setGoldOld] = useState<boolean>(getCookie("GoldOld") || false);
-    var GrossCGTax = getCookie("CGTax");
-    if (GrossCGTax === 0) { GrossCGTax = null; }
-
-
-    // const handleChange = event => {
-    //     setSelected(event.target.key);
-    //     MetroPercent = event.target.value;
-    //     setCookie("MetroPercent", MetroPercent, 30);
-    // };
-
-
+    var GrossCGTax = getCookie("GrossCGTax");
+    if (GrossCGTax === 0) GrossCGTax = null
     
     const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
 
         event.preventDefault();
         setStockPurchase(parseFloat((document.getElementById("StockPurchase") as HTMLInputElement).value));
         setStockSale(parseFloat((document.getElementById("StockSale") as HTMLInputElement).value));
-        // setStockOld((document.getElementById("StockPurchase") as HTMLInputElement).checked);
         setMFPurchase(parseFloat((document.getElementById("MFPurchase") as HTMLInputElement).value));
         setMFSale(parseFloat((document.getElementById("MFSale") as HTMLInputElement).value));
-        // setMFOld((document.getElementById("MFPurchase") as HTMLInputElement).checked);
         setPropertyPurchase(parseFloat((document.getElementById("PropertyPurchase") as HTMLInputElement).value));
         setPropertySale(parseFloat((document.getElementById("PropertySale") as HTMLInputElement).value));
-        // setPropertyOld((document.getElementById("PropertyPurchase") as HTMLInputElement).checked);
         setGoldPurchase(parseFloat((document.getElementById("GoldPurchase") as HTMLInputElement).value));
         setGoldSale(parseFloat((document.getElementById("GoldSale") as HTMLInputElement).value));
-
-
+        
+        
         if (!(isNaN(StockPurchase) || isNaN(StockSale) || isNaN(MFPurchase) || isNaN(MFSale) || isNaN(PropertyPurchase) || isNaN(PropertySale) || isNaN(GoldPurchase) || isNaN(GoldSale))) {
 
             setCookie("StockPurchase", StockPurchase, 30);
@@ -111,11 +86,6 @@ const GCGCal = () => {
             if (GoldOld) GrossCGTax += (GoldCG * 0.2);
             else GrossCGTax += (GoldCG * 0.3);
 
-            // if (GrossCGTax === 0) {
-            //     GrossCGTax = null;
-            //     alert("All Fields are Required!")
-            // }
-            // else {
                 setCookie("GrossCGTax", GrossCGTax, 30);
                 document.getElementById("Ans").innerHTML = (GrossCGTax).toString();
             // }
@@ -130,7 +100,7 @@ const GCGCal = () => {
             <div className="container">
                 <Form id="taxDeduc" className="m-3">
                     <h4 id='Soon'>
-                        Soon, you can calculate Tax Deductions!!!
+                        Soon, you can calculate Tax Deductions here!
                     </h4>
                 </Form>
                 {/* <br /> */}
@@ -140,40 +110,31 @@ const GCGCal = () => {
                         <code>Gross Capital Gain Tax Calculator</code>
                     </h2>
 
-                    {/* <Form.Group>
-                        <h5 className="m-3" style={{ textAlign: "center" }}>Enter All Values per Month</h5>
-                    </Form.Group> */}
                     <br />
 
-                    <FormGroup label="Stock Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago"  id="StockPurchase" defaultValue={StockPurchase} onChange={(StockPurchase, isSecond) => {
+                    <FormGroup label="Stock Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago" isSecond={StockOld} id="StockPurchase" defaultValue={StockPurchase} onChange={(StockPurchase, isSecond) => {
                         setStockPurchase(StockPurchase)
                         setStockOld(isSecond)
                     }} />
                     <FormGroup label="Stock Sale Price" id="StockSale" defaultValue={StockSale} onChange={(StockSale) => setStockSale(StockSale)} />
-                    <FormGroup label="Mutual Fund Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago"  id="MFPurchase" defaultValue={MFPurchase} onChange={(MFPurchase, isSecond) => {
+
+                    <FormGroup label="Mutual Fund Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago" isSecond={MFOld} id="MFPurchase" defaultValue={MFPurchase} onChange={(MFPurchase, isSecond) => {
                         setMFPurchase(MFPurchase)
                         setMFOld(isSecond)
                     }} />
                     <FormGroup label="Mutual Fund Sale Price" id="MFSale" defaultValue={MFSale} onChange={(MFSale) => setMFSale(MFSale)} />
-                    <FormGroup label="Property Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago"  id="PropertyPurchase" defaultValue={PropertyPurchase} onChange={(PropertyPurchase, isSecond) => {
+
+                    <FormGroup label="Property Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago" isSecond={PropertyOld} id="PropertyPurchase" defaultValue={PropertyPurchase} onChange={(PropertyPurchase, isSecond) => {
                         setPropertyPurchase(PropertyPurchase)
                         setPropertyOld(isSecond)
                     }} />
                     <FormGroup label="Property Sale Price" id="PropertySale" defaultValue={PropertySale} onChange={(PropertySale) => setPropertySale(PropertySale)} />
-                    <FormGroup label="Gold Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago"  id="GoldPurchase" defaultValue={GoldPurchase} onChange={(GoldPurchase, isSecond) => {
+
+                    <FormGroup label="Gold Purchase Price" rlabel1="Purchased less than a Year" rlabel2="Purchased Year Ago" isSecond={GoldOld} id="GoldPurchase" defaultValue={GoldPurchase} onChange={(GoldPurchase, isSecond) => {
                         setGoldPurchase(GoldPurchase)
                         setGoldOld(isSecond)
                     }} />
                     <FormGroup label="Gold Sale Price" id="GoldSale" defaultValue={GoldSale} onChange={(GoldSale) => setGoldSale(GoldSale)} />
-
-                    {/* <div className="select-container">
-                        <Form.Label className="m-3">I Live In MetroPolitan City</Form.Label>
-                        <select id="MP" value={selected} onChange={handleChange}>
-                            {Metro.map((option) => (
-                                <option key={option.key} value={option.value}>{option.label}</option>
-                            ))}
-                        </select>
-                    </div> */}
 
                     <Form.Group id='CalBtnGrp'>
                         <Button

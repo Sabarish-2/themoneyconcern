@@ -8,11 +8,10 @@ interface FormGrpProps {
     onChange: (value: number, isYearly: boolean) => void;
     rlabel1?: string;
     rlabel2?: string;
+    isSecond?: boolean;
 }
 
-const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : FormGrpProps) => {
-    const [isSecond, setIsSecond] = useState<boolean>(false);
-
+const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2, isSecond} : FormGrpProps) => {
     return (
         <Form.Group>
             <Form.Label className="m-3">{label}</Form.Label>
@@ -32,7 +31,7 @@ const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : Form
                             // value="0"
                             checked={!isSecond}
                             onChange={(e) => {
-                                setIsSecond(false)
+                                isSecond = false
                                 onChange(parseFloat(e.target.value) || defaultValue, isSecond)
                             }}
                             />
@@ -47,7 +46,7 @@ const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : Form
                             // value="1"
                             checked={isSecond}
                             onChange={(e) => {
-                                setIsSecond(true)
+                                isSecond = true
                                 onChange(parseFloat(e.target.value) || defaultValue, isSecond)
                         }}
                         />
