@@ -18,9 +18,9 @@ function NavBar() {
         // </Navbar>
         <div>
             <nav className="navbar navbar-expand-md navbar-light bg-light">
-                <Link className="navbar-brand" to="/">The Money Concern</Link>
-                <Link className="nav-link" to="/gtical">Gross Total Income</Link>
-                <Link className="nav-link" to="/gcgcal">Capital Gain Tax Calculator</Link>
+                <Link className="navbar-brand" to="/themoneyconern">The Money Concern</Link>
+                <Link className="nav-link" to="/themoneyconern/gtical">Gross Salary</Link>
+                <Link className="nav-link" to="/themoneyconern/gcgcal">Capital Gain Tax</Link>
             </nav>
         </div>
     );

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import FormGroup from './FormGroup';
 import './GTICal.css';
-import { set } from "react-hook-form";
 
 const GCGCal = () => {
 
@@ -44,16 +43,16 @@ const GCGCal = () => {
 
     const [StockPurchase, setStockPurchase] = useState<number>(getCookie("StockPurchase"));
     const [StockSale, setStockSale] = useState<number>(getCookie("StockSale"));
-    const [StockOld, setStockOld] = useState<boolean>(getCookie("StockOld"));
+    const [StockOld, setStockOld] = useState<boolean>(getCookie("StockOld") || false);
     const [MFPurchase, setMFPurchase] = useState<number>(getCookie("MFPurchase"));
     const [MFSale, setMFSale] = useState<number>(getCookie("MFSale"));
-    const [MFOld, setMFOld] = useState<boolean>(getCookie("MFOld"));
+    const [MFOld, setMFOld] = useState<boolean>(getCookie("MFOld") || false);
     const [PropertyPurchase, setPropertyPurchase] = useState<number>(getCookie("PropertyPurchase"));
     const [PropertySale, setPropertySale] = useState<number>(getCookie("PropertySale"));
-    const [PropertyOld, setPropertyOld] = useState<boolean>(getCookie("PropertyOld"));
+    const [PropertyOld, setPropertyOld] = useState<boolean>(getCookie("PropertyOld") || false);
     const [GoldPurchase, setGoldPurchase] = useState<number>(getCookie("GoldPurchase"));
     const [GoldSale, setGoldSale] = useState<number>(getCookie("GoldSale"));
-    const [GoldOld, setGoldOld] = useState<boolean>(getCookie("GoldOld"));
+    const [GoldOld, setGoldOld] = useState<boolean>(getCookie("GoldOld") || false);
     var GrossCGTax = getCookie("CGTax");
     if (GrossCGTax === 0) { GrossCGTax = null; }
 

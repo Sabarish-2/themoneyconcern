@@ -29,10 +29,13 @@ const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : Form
                         <input
                             type="radio"
                             name={id}
-                            value="0"
+                            // value="0"
                             checked={!isSecond}
-                            onChange={() => setIsSecond(false)}
-                        />
+                            onChange={(e) => {
+                                setIsSecond(false)
+                                onChange(parseFloat(e.target.value), isSecond)
+                            }}
+                            />
                         {rlabel1}
                     </label>
                 )}
@@ -41,9 +44,12 @@ const FormGroup = ({ label, defaultValue, id, onChange, rlabel1, rlabel2} : Form
                         <input
                             type="radio"
                             name={id}
-                            value="1"
+                            // value="1"
                             checked={isSecond}
-                            onChange={() => setIsSecond(true)}
+                            onChange={(e) => {
+                                setIsSecond(true)
+                                onChange(parseFloat(e.target.value), isSecond)
+                        }}
                         />
                         {rlabel2}
                     </label>

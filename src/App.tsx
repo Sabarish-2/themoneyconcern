@@ -13,9 +13,10 @@ function App() {
       <NavBar />
       <br />
       <Routes>
-        <Route path="/gtical" element={<GTICalPage />} />
-        <Route path="/gcgcal" element={<GCGCalPage />} />
-        <Route path="/*" element={<HomePage />} />
+        <Route path="/themoneyconern/gtical" element={<GTICalPage />} />
+        <Route path="/themoneyconern/gcgcal" element={<GCGCalPage />} />
+        <Route path="/themoneyconern" element={<HomePage />} />
+        <Route path="/themoneyconern/*" element={<HomePage />} />
       </Routes>
     </div >
     </BrowserRouter>
