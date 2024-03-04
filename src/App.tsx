@@ -13,9 +13,9 @@ function App() {
       <NavBar />
       <br />
       <Routes>
-        <Route path="/#/gtical" element={<GTICalPage />} />
-        <Route path="/#/gcgcal" element={<GCGCalPage />} />
-        <Route path="/#" element={<HomePage />} />
+        <Route path="/gtical" element={<GTICalPage />} />
+        <Route path="/gcgcal" element={<GCGCalPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/*" element={<HomePage />} />
       </Routes>
     </div >
