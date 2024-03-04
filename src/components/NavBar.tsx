@@ -21,6 +21,7 @@ function NavBar() {
                 <Link className="navbar-brand" to="/">The Money Concern</Link>
                 <Link className="nav-link" to="/gtical">Gross Salary</Link>
                 <Link className="nav-link" to="/gcgcal">Capital Gain Tax</Link>
+                <Link className="nav-link" to="/gipcal">Gross Income From Property</Link>
             </nav>
         </div>
     );
