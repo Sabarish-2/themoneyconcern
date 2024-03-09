@@ -1,4 +1,5 @@
 // import { Nav, Navbar } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 
@@ -16,14 +17,14 @@ function NavBar() {
                 
         //     </Navbar.Collapse>
         // </Navbar>
-        <div>
-            <nav className="navbar navbar-expand-md navbar-light bg-light">
+        // <div>
+            <Navbar className="navbar navbar-expand-md navbar-light bg-light">
                 <Link className="navbar-brand" to="/">The Money Concern</Link>
                 <Link className="nav-link" to="/gtical">Gross Salary</Link>
                 <Link className="nav-link" to="/gcgcal">Capital Gain Tax</Link>
                 <Link className="nav-link" to="/gipcal">Gross Income From Property</Link>
-            </nav>
-        </div>
+            </Navbar>
+        // </div>
     );
 }
 
